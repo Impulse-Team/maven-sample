@@ -4,8 +4,7 @@ on: workflow_dispatch
 jobs:
   mvn_build:
     runs-on: ubuntu-latest
-    container:
-      image: amazoncorretto:11.0.16-al2
+
     steps:    
 
     - uses: actions/checkout@v3

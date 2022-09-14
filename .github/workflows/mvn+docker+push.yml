@@ -8,7 +8,5 @@ jobs:
       image: amazoncorretto:11.0.16-al2
     steps:    
       - uses: actions/checkout@v3 
-        with:
-          repository: Impulse-Team/maven-sample
       - name: Build with Maven
         run: mvn -B package --file pom.xml

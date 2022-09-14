@@ -1,0 +1,18 @@
+name: Maven build over docker image
+on:
+  push:
+    branches: [ none ]
+  pull_request:
+    branches: [ none ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    container:
+      image: amazoncorretto:11.0.16-al2
+    steps:    
+      - uses: actions/checkout@v3 
+        with:
+          repository: Impulse-Team/maven-sample
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml

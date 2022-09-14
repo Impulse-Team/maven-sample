@@ -45,7 +45,7 @@ jobs:
           path: target/
           
     - name: Listing artifacts
-      run: ls -la
+      run: ls -la target/
       
     - name: Docker build
       run: |

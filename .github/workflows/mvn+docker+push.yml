@@ -38,11 +38,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
     - uses: actions/download-artifact@v3
       with:
           name: jar-artifact
           path: target/
           
+    - name: Listing artifacts
+      run: ls -la
+      
     - name: Docker build
       run: |
         docker build . -t sample-maven:latest

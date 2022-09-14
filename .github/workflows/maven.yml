@@ -2,7 +2,7 @@ name: Maven Build Package JDK11
 
 on:
   push:
-    branches: [ master ]
+    branches: [ none ]
   pull_request:
     branches: [ none ]
 

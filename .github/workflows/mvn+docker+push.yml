@@ -7,14 +7,14 @@ jobs:
     steps:    
     - uses: actions/checkout@v3
     
-    - name: Set up JDK 11
+    - name: Set up JDK 11           ### Required version for this project to be built
       uses: actions/setup-java@v3
       with:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
         
-    - name: Build with Maven
+    - name: Build with Maven        ### Maven build
       run: mvn -B package --file pom.xml
       
     - name: Maven tests
@@ -25,3 +25,10 @@ jobs:
       
     - name: Display of the built artifacts
       run: ls -la
+
+    - name: Temporarily save jar artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: jar-artifact
+        path: ${{ github.workspace }}/target/*.jar
+        retention-days: 1

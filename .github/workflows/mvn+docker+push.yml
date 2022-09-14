@@ -1,9 +1,5 @@
 name: Maven build over docker image
-on:
-  push:
-    branches: [ none ]
-  pull_request:
-    branches: [ none ]
+on: workflow_dispatch
 
 jobs:
   ci:

@@ -22,3 +22,6 @@ jobs:
       
     - name: Build maven package
       run: mvn -B package 
+      
+    - name: Display of the built artifacts
+      run: ls -la

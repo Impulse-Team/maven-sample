@@ -2,7 +2,7 @@ name: Maven build over docker image
 on: workflow_dispatch
 
 jobs:
-  mvn_build:
+  build_procedure:
     runs-on: ubuntu-latest ## Github pool agent's name
     steps:    
     - uses: actions/checkout@v3
